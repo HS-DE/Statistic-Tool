@@ -109,6 +109,6 @@ def to_excel_bytes(sheets: Mapping[str, pd.DataFrame]) -> bytes:
 
 
 def _safe_sheet_name(name: str) -> str:
-    bad = set('[]:*?/\')
+    bad = set('[]:*?/\\')
     cleaned = "".join("_" if c in bad else c for c in str(name)).strip() or "Sheet"
     return cleaned[:31]
