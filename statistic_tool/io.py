@@ -29,7 +29,7 @@ def read_table(file: BinaryIO | object) -> pd.DataFrame:
     if suffix == ".xlsx":
         return pd.read_excel(file, engine="openpyxl")
     if suffix == ".tsv":
-        return pd.read_csv(file, sep="	")
+        return pd.read_csv(file, sep="\t")
     if suffix == ".txt":
         return pd.read_csv(file, sep=None, engine="python")
     return pd.read_csv(file)
